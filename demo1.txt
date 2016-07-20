@@ -1,0 +1,4 @@
+1.在制定目录下进入git bash
+2. $ mkdir test    //新建文件夹
+   $ cd test       //进入test文件目录
+   $ pwd           //显示当前目录路径
