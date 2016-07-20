@@ -1,0 +1,37 @@
+﻿1.在制定目录下进入git bash
+2. $ mkdir test    //新建文件夹
+   $ cd test       //进入test文件目录
+   $ pwd           //显示当前目录路径
+   $ git add demo1.txt  //添加文件到仓库   可连续添加
+   $ git commit -m "提交说明"
+
+   $ git status     //查看仓库状态，是否有文件修改
+   $ git diff demo2.txt      //查看demo2.txt文件修改内容
+   $ cat demo2.txt     //查看文件demo2.txt内容
+
+   $ git log        //查看提交历史，以便确认回退到哪个版本
+   $ git reset --hard HEAD^     //在Git中，用HEAD表示当前版本,上一个版本就是HEAD^，
+				上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+   $ git reset --hard 52559d    //hard后面加版本号，可以回到该版本号指定版本，版本不需要写全
+   $ git reflog      //记录之前执行过命令后的版本变化，可以找到每个版本号
+
+【add】指令将修改添加到暂存区，【commit】指令将暂存区修改提交到master
+
+
+【修改】
+   $ git checkout -- demo2.txt  
+    	命令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+
+	一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+
+	一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+	总之，就是让这个文件回到最近一次git commit或git add时的状态。
+
+   $ git reset HEAD demo2.txt   //当demo2.txt执行了add但是没有提交时，把demo2.txt在暂存区的修改回退到工作区
+
+【删除】
+   (1)直接在文件管理器中删除，或执行命令 $ rm demo2.txt
+	则工作区和版本库不一致，如果取消删除，则$ git checkout -- demo2.txt
+	如果，确认删除，则$ git rm demo2.txt 并 $ git commit -m "",如果执行$ git rm后想取消，
+		则先$ git reset HEAD demo2.txt,然后$ git checkout -- demo2.txt
