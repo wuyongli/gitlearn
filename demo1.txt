@@ -1,4 +1,6 @@
 1.在制定目录下进入git bash
-2. $ mkdir test    //新建文件夹
-   $ cd test       //进入test文件目录
-   $ pwd           //显示当前目录路径
+2. $ mkdir test   					 					//新建文件夹
+   $ cd test      							 				//进入test文件目录
+   $ pwd           											//显示当前目录路径
+   $ git add demo1.txt  							//添加文件到仓库   可连续添加
+   $ git commit -m "提交说明" 					 //提交
