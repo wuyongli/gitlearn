@@ -2,6 +2,8 @@
 2. $ mkdir test    //新建文件夹
    $ cd test       //进入test文件目录
    $ pwd           //显示当前目录路径
+   
+   $ git init             //建立本地库
    $ git add demo1.txt  //添加文件到仓库   可连续添加
    $ git commit -m "提交说明"
 
@@ -35,3 +37,12 @@
 	则工作区和版本库不一致，如果取消删除，则$ git checkout -- demo2.txt
 	如果，确认删除，则$ git rm demo2.txt 并 $ git commit -m "",如果执行$ git rm后想取消，
 		则先$ git reset HEAD demo2.txt,然后$ git checkout -- demo2.txt
+
+【远程库github】
+	在github上新建一个库，将本地库与github库建立连接，origin为远程库的默认名
+		$ git remote add origin https://github.com/wuyongli/gitlearn.git
+	将本地内容推送到远程库
+		$ git push -u origin master   //第一次推送时，加-u参数，把本地的master分支和远程的master分支关联起来
+				之后推送更新内容，直接$ git push origin master
+		
+		克隆  在本地指定位置 $ git clone https://github.com/wuyongli/gitlearn.git	     
